@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<web-app version="3.0" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_3_0.xsd">
+    <description>Exploiting a calculator library.</description>
+    <display-name>Calculator Web Implementation</display-name>
+    <servlet>
+        <servlet-name>CalculatorController</servlet-name>
+        <servlet-class>controller.CalculatorController</servlet-class>
+    </servlet>
+    <servlet>
+        <description>Default page</description>
+        <servlet-name>Index</servlet-name>
+        <jsp-file>/index.jsp</jsp-file>
+    </servlet>
+    <servlet>
+        <servlet-name>DisplayFragment</servlet-name>
+        <jsp-file>/WEB-INF/jspf/display.jspf</jsp-file>
+        <init-param>
+            <description>Current text to display.</description>
+            <param-name>text</param-name>
+            <param-value>0</param-value>
+        </init-param>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>CalculatorController</servlet-name>
+        <url-pattern>/CalculatorController</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>Index</servlet-name>
+        <url-pattern>/index</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>DisplayFragment</servlet-name>
+        <url-pattern>/displayFrag</url-pattern>
+    </servlet-mapping>
+    <session-config>
+        <session-timeout>
+            30
+        </session-timeout>
+    </session-config>
+</web-app>
