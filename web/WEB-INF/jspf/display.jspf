@@ -1,5 +1,4 @@
 <%-- any content can be specified here e.g.: --%>
-<%@ page pageEncoding="UTF-8" %>
-<textarea name="displayBox" rows="3" cols="50" readonly="readonly">
+<textarea class="text-right" name="displayBox" rows="2" cols="50" readonly="readonly">
     ${sessionScope.display}
 </textarea>

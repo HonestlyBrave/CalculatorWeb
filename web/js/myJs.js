@@ -6,8 +6,12 @@ $(document).ready(function () {
         $.ajax(
                 {
                     url: "index",
-                    success: function (controllerResponse) {
-                        $("#frag").html(controllerResponse);
+                    success: function (resp) {
+                        $("#frag").replaceWith(resp);
+                        console.log("Something loaded.", resp);
+                    },
+                    error: function (error) {
+                        console.log("Failed to load", error);
                     }
                 }
         );
@@ -15,3 +19,7 @@ $(document).ready(function () {
     );
 }
 );
+
+function moveForm() {
+    alert("Not yet implemented!");
+}

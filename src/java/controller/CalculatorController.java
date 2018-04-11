@@ -39,9 +39,6 @@ public class CalculatorController extends HttpServlet {
     protected void processRequest(HttpServletRequest request,
             HttpServletResponse response) throws ServletException, IOException {
         session = request.getSession();
-//        if (session.getAttribute("display") == null) {
-//            session.setAttribute("display", display.getDisplay());
-//        }
 
         String calcAction = request.getParameter("calc");
         int index = 21; // Default index will execute undo.
@@ -100,6 +97,9 @@ public class CalculatorController extends HttpServlet {
 
         commands.execute(index);
         session.setAttribute("display", display.getDisplay());
+        if (isAjaxRequest(request)) {
+            dispatch("displayFrag", request, response);
+        }
         dispatch("index", request, response);
 
     }
@@ -119,6 +119,16 @@ public class CalculatorController extends HttpServlet {
         if (destJsp != null) {
             request.getRequestDispatcher(destJsp).forward(request, response);
         }
+    }
+
+    /**
+     * Check header for Ajax borne request.
+     *
+     * @param request
+     * @return
+     */
+    protected boolean isAjaxRequest(HttpServletRequest request) {
+        return "XMLHttpRequest".equals(request.getHeader("X-Requested-With"));
     }
 
     // </editor-fold>
