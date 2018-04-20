@@ -44,10 +44,20 @@ public class CalculatorController extends HttpServlet {
         int index = 21; // Default index will execute undo.
 
         if (calcAction.equalsIgnoreCase("clear")) {
+
             index = 11;
+
         } else if ("0123456789".contains(calcAction)) {
 
             index = Integer.parseInt(calcAction);
+
+        } else if (calcAction.startsWith("X")) {
+
+            if (calcAction.endsWith("²")) {
+                index = 24;
+            } else {
+                index = 25;
+            }
 
         } else if (calcAction.startsWith("M")) {
 

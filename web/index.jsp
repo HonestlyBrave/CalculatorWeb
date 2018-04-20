@@ -55,6 +55,12 @@
                         <td><input class="btn-lg" type="submit" value=")" name="calc" accesskey="c" /></td>
                     </tr>
                     <tr>
+                        <td><input class="btn-lg" type="submit" value="X²" name="calc" accesskey="q" /></td>
+                        <td><input class="btn-lg" type="submit" value="X³" name="calc" accesskey="b" /></td>
+                        <td><input class="btn-lg" type="submit" value="None" name="calc" accesskey="" /></td>
+                        <td><input class="btn-lg" type="submit" value="None" name="calc" accesskey="" /></td>
+                    </tr>
+                    <tr>
                         <td><input class="btn-lg" type="submit" value="M+" name="calc" accesskey="a" /></td>
                         <td><input class="btn-lg" type="submit" value="M-" name="calc" accesskey="s" /></td>
                         <td><input class="btn-lg" type="submit" value="MR" name="calc" accesskey="r" /></td>

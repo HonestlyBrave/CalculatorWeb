@@ -32,7 +32,8 @@ public class Commands {
             new CommandDivide(), new CommandMemAdd(), new CommandMemSubtract(),
             new CommandMemRecall(), new CommandSubtract(), new CommandMultiply(),
             new CommandSolve(), new CommandMemClear(), new CommandUndo(),
-            new CommandOpenPara(), new CommandClosePara()};
+            new CommandOpenPara(), new CommandClosePara(), new CommandSquared(),
+            new CommandCubed()};
 
         return tmp;
     }
